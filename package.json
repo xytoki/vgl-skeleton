@@ -1,6 +1,6 @@
 {
   "name": "@xytoki/vgl-skeleton",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "description": "vue-gl components for skeletal animation including spine and dragonbones",
   "scripts": {

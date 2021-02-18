@@ -5024,6 +5024,9 @@ var es_number_constructor = __webpack_require__("a9e3");
 // EXTERNAL MODULE: external {"commonjs":"three","commonjs2":"three","amd":"THREE","umd":"THREE"}
 var external_commonjs_three_commonjs2_three_amd_THREE_umd_THREE_ = __webpack_require__("5fda");
 
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","amd":"Vue","umd":"Vue"}
+var external_commonjs_vue_commonjs2_vue_amd_Vue_umd_Vue_ = __webpack_require__("8bbf");
+
 // CONCATENATED MODULE: ./node_modules/vue-gl/src/core/tree.js
 /* harmony default export */ var tree = (class {
   constructor(parent, getter) {
@@ -5318,9 +5321,6 @@ function validateVector2Array(array) {
   return (Array.isArray(array) ? array : array.split(',')).every(validateVector2);
 }
 
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","amd":"Vue","umd":"Vue"}
-var external_commonjs_vue_commonjs2_vue_amd_Vue_umd_Vue_ = __webpack_require__("8bbf");
-
 // CONCATENATED MODULE: ./node_modules/vue-gl/src/core/vgl-object3d.js
 
 
@@ -5458,8 +5458,7 @@ var external_commonjs_vue_commonjs2_vue_amd_Vue_umd_Vue_ = __webpack_require__("
     },
   },
   render() {
-    if (!this.$slots.default) return undefined;
-    return Object(external_commonjs_vue_commonjs2_vue_amd_Vue_umd_Vue_["h"])('div', { style: { display: 'none' } }, this.$slots.default());
+    return this.$slots.default ? Object(external_commonjs_vue_commonjs2_vue_amd_Vue_umd_Vue_["h"])('template', this.$slots.default()) : undefined;
   },
 });
 
