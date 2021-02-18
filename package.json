@@ -1,0 +1,29 @@
+{
+  "name": "vgl-skeleton",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "vue-gl components for skeletal animation including spine and dragonbones",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "npm run build:spine && npm run build:dragonbones && npm run build:main",
+    "build:main": "vue-cli-service build --target lib --name VglSkeleton src/combined.js --no-clean",
+    "build:spine": "vue-cli-service build --target lib --name VglSpine src/VglSpine.js --no-clean",
+    "build:dragonbones": "vue-cli-service build --target lib --name VglDragonbones src/VglDragonbones.js --no-clean",
+    "lint": "vue-cli-service lint"
+  },
+  "main": "dist/VglSkeleton.common.js",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "raw-loader": "^4.0.2",
+    "three": "^0.117.1",
+    "vue": "^3.0.0",
+    "vue-gl": "^0.22.1"
+  }
+}
