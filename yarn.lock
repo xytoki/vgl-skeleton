@@ -8222,10 +8222,9 @@ vue-eslint-parser@^7.5.0:
     esquery "^1.4.0"
     lodash "^4.17.15"
 
-vue-gl@^0.22.1:
+"vue-gl@git+https://github.com/xytoki/vue-gl.git":
   version "0.22.1"
-  resolved "https://registry.npm.taobao.org/vue-gl/download/vue-gl-0.22.1.tgz#4cd90173330fc133f0a5f4ccd7e9fd5a0afb993f"
-  integrity sha1-TNkBczMPwTPwpfTM1+n9Wgr7mT8=
+  resolved "git+https://github.com/xytoki/vue-gl.git#225fc89396ca9d0e534b492454d2c615c48bff5e"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
