@@ -23,7 +23,6 @@
                     name="spineobj"
                     v-if="mode == 'spine'"
                 />
-
                 <vgl-dragonbones
                     v-if="mode == 'dragonbones'"
                     :skel="dbSkel"
@@ -32,9 +31,9 @@
                     :animation="dbAnimation"
                     dragonbonesName="Dragon"
                     armatureName="Dragon"
-                    position="100 100 0"
-                    rotation="0 0 3.14 ZYX"
-                    scale="0.3 0.3 0.3"
+                    position="0 100 0"
+                    rotation="0 0 0 ZYX"
+                    scale="0.3 -0.3 0.3"
                 />
             </vgl-scene>
             <vgl-perspective-camera
@@ -66,10 +65,12 @@
                     <option>jump</option>
                     <option>stand</option>
                     <option>walk</option>
-                </select></span>
+                </select></span
+            >
             <label>
-                Zoom <input v-model="zoom" type="range" max="2" step="0.02" />
-                Fov <input v-model="fov" type="range" max="100" step="1" />
+                Zoom
+                <input v-model="zoom" type="range" max="2" step="0.02" /> Fov
+                <input v-model="fov" type="range" max="100" step="1" />
             </label>
         </aside>
     </div>
@@ -99,8 +100,8 @@ export default {
             dbSkel,
             dbTex,
             spineAnimation: "run",
-            dbAnimation:"walk",
-            fov:50
+            dbAnimation: "walk",
+            fov: 50
         }
     },
     async mounted() {

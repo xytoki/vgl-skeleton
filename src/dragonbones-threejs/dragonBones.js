@@ -15651,12 +15651,13 @@ var dragonBones;
                         var scale = this._armature._armatureData.scale;
                         var uvs = new Array();
                         for (var i = 0, l = vertexCount; i < l; ++i) {
+                            let iD = i * 2
                             var vertex = dragonBones.ThreeFactory.create(dragonBones.ThreeFactory.POOL_TYPE_VECTOR3);
                             var uv = dragonBones.ThreeFactory.create(dragonBones.ThreeFactory.POOL_TYPE_VECTOR2);
                             vertices.push(vertex);
                             uvs.push(uv);
-                            uv.set(floatArray[uvOffset + i], floatArray[uvOffset + i + 1]);
-                            vertex.set(floatArray[vertexOffset + i] * scale, floatArray[vertexOffset + i + 1] * scale, 0.0);
+                            uv.set(floatArray[uvOffset + iD], floatArray[uvOffset + iD + 1]);
+                            vertex.set(floatArray[vertexOffset + iD] * scale, floatArray[vertexOffset + iD + 1] * scale, 0.0);
                             if (textureData.rotated) {
                                 uv.set((textureX + (1.0 - uv.y) * textureWidth) / textureAtlasWidth, (textureY + uv.x * textureHeight) / textureAtlasHeight);
                             }
@@ -15770,6 +15771,7 @@ var dragonBones;
                 }
             }
             else if (hasDeform) {
+                geometry.verticesNeedUpdate = true;
                 var isSurface = this._parent._boneData.type !== 0 /* Bone */;
                 var data = geometryData.data;
                 var intArray = data.intArray;
@@ -15782,7 +15784,7 @@ var dragonBones;
                 for (var i = 0, l = vertexCount * 2; i < l; i += 2) {
                     var x = floatArray[vertexOffset + i] * scale + deformVertices[i];
                     var y = floatArray[vertexOffset + i + 1] * scale + deformVertices[i + 1];
-                    var vertex = vertices[i];
+                    var vertex = vertices[i / 2];
                     if (isSurface) {
                         var matrix = this._parent._getGlobalTransformMatrix(x, y);
                         vertex.set(matrix.a * x + matrix.c * y + matrix.tx, matrix.b * x + matrix.d * y + matrix.ty, 0.0);
@@ -15906,7 +15908,7 @@ var dragonBones;
                 pool.push(object);
             }
             else {
-                throw new Error();
+                // throw new Error();
             }
         };
         Object.defineProperty(ThreeFactory, "factory", {
